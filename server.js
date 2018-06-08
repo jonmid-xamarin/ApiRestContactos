@@ -63,6 +63,7 @@ app.post('/createUser', (req, res) => {
     let data = req.body;
     let consecutive = users.length;
     let usersTmp = {
+        success: true,
         id: consecutive,
         username: data.Username,
         password: data.Password,
