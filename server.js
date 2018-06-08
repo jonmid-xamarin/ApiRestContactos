@@ -30,7 +30,7 @@ let contacts = [
 // Validar usuarios al momento de hacer login
 app.post('/validateUser', (req, res) => {
     let data = req.body;
-    let success = [{id: 0, username: '', password: '', name: '', email: '', image: ''}];
+    let usersTmp = [{id: 0, username: '', password: '', name: '', email: '', image: ''}];
 
     users.some(function (value, index, _arr) {
         if( (value.username == data.Username) && (value.password == data.Password) ){
@@ -41,7 +41,7 @@ app.post('/validateUser', (req, res) => {
         }
     });
 
-    res.send(success)
+    res.send(usersTmp)
 })
 
 
