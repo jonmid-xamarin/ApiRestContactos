@@ -103,6 +103,22 @@ app.put('/contacts/:id',(req, res) => {
     res.send("Contact update")
 })
 
+// Crear contactos
+app.post('/contacts', (req, res) => {
+    let data = req.body;
+    let consecutive = contacts.length;
+    let contactTmp = [{
+        id: consecutive,
+        name: data.Name,
+        phone: data.Phone,
+        email: data.Email,
+        image: 'xxx.png'
+    }];
+    contacts.push(contactTmp[0])
+
+    res.send("Contact create")
+})
+
 
 
  
