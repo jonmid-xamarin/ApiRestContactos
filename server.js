@@ -76,6 +76,15 @@ app.post('/createUser', (req, res) => {
     res.send(usersTmp)
 })
 
+app.get('/contacts', (req, res) => {
+    let pos = 0;
+    contacts.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
+    res.send(contacts)
+})
+
 
 
  
