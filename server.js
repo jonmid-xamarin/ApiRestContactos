@@ -24,8 +24,8 @@ let contacts = [
     {id: 4, name: 'Juan Maya', phone: '5555555555', email: 'eeeee@gmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
 ];
 
-// *************************************************************
-// *************************************************************
+// ***************************************************************
+// ***************************************************************
 
 app.get('/', (req, res) => {
     res.status(200).send("Welcome to API REST")
