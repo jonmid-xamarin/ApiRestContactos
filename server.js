@@ -18,10 +18,10 @@ let users = [
 
 let contacts = [
     {id: 0, name: 'Carlos Mosquera', phone: '1111111111', email: 'aaaaa@gmail.com', image: 'http://stokpic.com/wp-content/uploads/2018/03/Man-looking-out-to-the-ocean-at-a-sail-boat.jpg'},
-    {id: 1, name: 'Sara Gonzalez', phone: '2222222222', email: 'bbbbb@hotmail.com', image: 'xxx.png'},
-    {id: 2, name: 'Dario Rodriguez', phone: '3333333333', email: 'ccccc@gmail.com', image: 'xxx.png'},
-    {id: 3, name: 'Erika Narvaez', phone: '4444444444', email: 'ddddd@hotmail.com', image: 'xxx.png'},
-    {id: 4, name: 'Juan Maya', phone: '5555555555', email: 'eeeee@gmail.com', image: 'xxx.png'}
+    {id: 1, name: 'Sara Gonzalez', phone: '2222222222', email: 'bbbbb@hotmail.com', image: 'http://stokpic.com/wp-content/uploads/2018/02/Beautiful-bride-smelling-her-bouquet-flowers.jpg'},
+    {id: 2, name: 'Dario Rodriguez', phone: '3333333333', email: 'ccccc@gmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/07/Close-up-of-mans-face-wet-from-ocean.jpg'},
+    {id: 3, name: 'Erika Narvaez', phone: '4444444444', email: 'ddddd@hotmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/06/African-American-woman-leaning-against-a-wall-1.jpg'},
+    {id: 4, name: 'Juan Maya', phone: '5555555555', email: 'eeeee@gmail.com', image: 'http://stokpic.com/wp-content/uploads/2017/04/Happy-Couple-Getting-Married-With-Confetti-And-Flowers.jpg'}
 ];
 
 // *************************************************************
@@ -112,7 +112,7 @@ app.post('/contacts', (req, res) => {
         name: data.Name,
         phone: data.Phone,
         email: data.Email,
-        image: 'xxx.png'
+        image: 'http://stokpic.com/wp-content/uploads/2015/09/Everything-Apple-iMac-iPhone-iPad-Macbook-And-Apple-Watch.jpg'
     }];
     contacts.push(contactTmp[0])
 
