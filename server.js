@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 5000
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// *************************************************************
-// *************************************************************
+// ***************************************************************
+// ***************************************************************
 
 let users = [
     {id: 0, username: 'admin', password: '123456', name: 'Jonathan Mideros', email: 'jamideros@hotmail.com', image: 'xxx.png'}
