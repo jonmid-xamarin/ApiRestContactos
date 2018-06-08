@@ -93,20 +93,22 @@ app.delete('/contacts/:id',(req, res) => {
     res.send('Contact delete')
 })
 
+// Actualizar un contacto
+app.put('/contacts/:id',(req, res) => {
+    let params = req.params;
+    let data = req.body;
+    contacts[params.id]['name'] = data.Name;
+    contacts[params.id]['phone'] = data.Phone;
+    contacts[params.id]['email'] = data.Email;
+    res.send("Contact update")
+})
+
 
 
  
 
 
-// Listar usuarios
-// app.get('/users', (req, res) => {
-//     let pos = 0;
-//     users.forEach(function(entry) {
-//         entry.id = pos;
-//         pos++;
-//     });
-//     res.send(users)
-// })
+
 
 // Crear usuarios
 app.post('/users', (req, res) => {
