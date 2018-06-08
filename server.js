@@ -119,37 +119,6 @@ app.post('/contacts', (req, res) => {
     res.send("Contact create")
 })
 
-
-
- 
-
-
-
-
-// Crear usuarios
-app.post('/users', (req, res) => {
-    let data = req.body;
-    let consecutive = users.length;
-    let itemUser = {id: consecutive, name: data.Name};
-    users.push(itemUser)
-    res.send("New user add")
-})
-
-// Actualizar usuarios
-app.put('/users/:id',(req, res) => {
-    let params = req.params;
-    let data = req.body;
-    users[params.id]['name'] = data.Name;
-    res.send("User update")
-})
-
-// Eliminar usuarios
-app.delete('/users/:id',(req, res) => {
-    let params = req.params;
-    users.splice(params.id, 1);
-    res.send('User delete')
-})
-
 // *************************************************************
 // *************************************************************
  
