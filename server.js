@@ -17,11 +17,11 @@ let users = [
 ];
 
 let contacts = [
-    {id: 0, name: 'Carlos', phone: '1111111111', email: 'aaaaa@gmail.com', image: 'xxx.png'},
-    {id: 1, name: 'Sara', phone: '2222222222', email: 'bbbbb@hotmail.com', image: 'xxx.png'},
-    {id: 2, name: 'Dario', phone: '3333333333', email: 'ccccc@gmail.com', image: 'xxx.png'},
-    {id: 3, name: 'Erika', phone: '4444444444', email: 'ddddd@hotmail.com', image: 'xxx.png'},
-    {id: 4, name: 'Juan', phone: '5555555555', email: 'eeeee@gmail.com', image: 'xxx.png'}
+    {id: 0, name: 'Carlos Mosquera', phone: '1111111111', email: 'aaaaa@gmail.com', image: 'xxx.png'},
+    {id: 1, name: 'Sara Gonzalez', phone: '2222222222', email: 'bbbbb@hotmail.com', image: 'xxx.png'},
+    {id: 2, name: 'Dario Rodriguez', phone: '3333333333', email: 'ccccc@gmail.com', image: 'xxx.png'},
+    {id: 3, name: 'Erika Narvaez', phone: '4444444444', email: 'ddddd@hotmail.com', image: 'xxx.png'},
+    {id: 4, name: 'Juan Maya', phone: '5555555555', email: 'eeeee@gmail.com', image: 'xxx.png'}
 ];
 
 // *************************************************************
@@ -76,6 +76,7 @@ app.post('/createUser', (req, res) => {
     res.send(usersTmp)
 })
 
+// Listar todos los contactos
 app.get('/contacts', (req, res) => {
     let pos = 0;
     contacts.forEach(function(entry) {
@@ -83,6 +84,13 @@ app.get('/contacts', (req, res) => {
         pos++;
     });
     res.send(contacts)
+})
+
+// Eliminar un contacto
+app.delete('/contacts/:id',(req, res) => {
+    let params = req.params;
+    contacts.splice(params.id, 1);
+    res.send('Contact delete')
 })
 
 
