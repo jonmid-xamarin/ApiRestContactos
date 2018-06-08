@@ -62,7 +62,7 @@ app.post('/validateUser', (req, res) => {
 app.post('/createUser', (req, res) => {
     let data = req.body;
     let consecutive = users.length;
-    let usersTmp = {
+    let usersTmp = [{
         success: true,
         id: consecutive,
         username: data.Username,
@@ -70,8 +70,8 @@ app.post('/createUser', (req, res) => {
         name: data.Name,
         email: data.Email,
         image: 'xxx.png'
-    };
-    users.push(usersTmp)
+    }];
+    users.push(usersTmp[0])
 
     res.send(usersTmp)
 })
