@@ -27,6 +27,14 @@ let contacts = [
 // *************************************************************
 // *************************************************************
 
+app.get('/', (req, res) => {
+    res.status(200).send("Welcome to API REST")
+})
+
+app.get('/users', (req, res) => {
+    res.send(users)
+})
+
 // Validar usuarios al momento de hacer login
 app.post('/validateUser', (req, res) => {
     let data = req.body;
@@ -50,22 +58,37 @@ app.post('/validateUser', (req, res) => {
     res.send(usersTmp)
 })
 
+// Crear usuarios para una nueva cuenta
+app.post('/createUser', (req, res) => {
+    let data = req.body;
+    let consecutive = users.length;
+    let usersTmp = {
+        id: consecutive,
+        username: data.Username,
+        password: data.Password,
+        name: data.Name,
+        email: data.Email,
+        image: 'xxx.png'
+    };
+    users.push(usersTmp)
+
+    res.send(usersTmp)
+})
+
 
 
  
-app.get('/', (req, res) => {
-  res.status(200).send("Welcome to API REST")
-})
+
 
 // Listar usuarios
-app.get('/users', (req, res) => {
-    let pos = 0;
-    users.forEach(function(entry) {
-        entry.id = pos;
-        pos++;
-    });
-    res.send(users)
-})
+// app.get('/users', (req, res) => {
+//     let pos = 0;
+//     users.forEach(function(entry) {
+//         entry.id = pos;
+//         pos++;
+//     });
+//     res.send(users)
+// })
 
 // Crear usuarios
 app.post('/users', (req, res) => {
